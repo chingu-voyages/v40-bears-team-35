@@ -9,5 +9,5 @@ the recipe they've been shown or move on to another option.
 ###### From the repo:
 
 1. Clone this project locally
-2. Run yarn in the project directory
-3. Run yarn dev to boot the project then ctrl+click on the generated localhost link to view the project in your browser
+2. Run `npm i` in the project directory
+3. Run `npm run dev` to boot the project then ctrl+click on the generated localhost link to view the project in your browser
