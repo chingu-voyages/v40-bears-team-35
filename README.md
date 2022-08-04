@@ -1,14 +1,13 @@
-# voyage-tasks
+# Recipe Roulette
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+This app provides a constant stream of curated recipes to the end user when it comes time to prepare a meal or go to the store.
+The design for this app draws from that of Tinder, utilizing a swipe input to determine whether the user would like to choose
+the recipe they've been shown or move on to another option.
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## Running the application locally
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+###### From the repo:
 
-> Own it & Make it your Own!
+1. Clone this project locally
+2. Run yarn in the project directory
+3. Run yarn dev to boot the project then ctrl+click on the generated localhost link to view the project in your browser
