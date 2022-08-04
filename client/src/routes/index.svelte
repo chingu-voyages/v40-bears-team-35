@@ -1,1 +1,4 @@
-<h1>Recipe Roulette</h1>
+<script>
+    import Navbar from '../components/Navbar.svelte';
+</script>
+<Navbar/>
