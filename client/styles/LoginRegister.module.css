@@ -1,0 +1,77 @@
+/* Container for the form */
+.box {
+    outline: #E93737 solid 16.3px;
+    border: 16.3px solid #E95353;
+    background-color: #FF8282;
+    width: 40%;
+    height: 60vh;
+    min-height: 600px;
+    margin: auto;
+    border-radius: 40px;
+    padding: 10px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Form CSS */
+.form {
+    width: 80%;
+}
+.formGroup {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.formLabel {
+    font-weight: bold;
+    font-size: large;
+    margin-top: 10px;
+}
+.formInput {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* button */
+.btn {
+    border: none;
+    background-color: #E93737;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 50%;
+    align-self: center;
+    font-size: larger;
+}
+
+/* link */
+.link {
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Media Queries */
+@media screen and (max-width: 598px) {
+    .box {
+        width: 90%;
+    }
+    .form {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 992px) and (min-width: 598px) {
+    .box {
+        width: 80%
+    }
+    .form {
+        width: 80%;
+    }
+}
