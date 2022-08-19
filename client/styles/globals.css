@@ -24,3 +24,8 @@ a {
     background-color: #81CAFF;
   }
 }
+
+:root {
+  --outerSize: 600px;
+  --innerSize: 550px;
+}
