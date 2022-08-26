@@ -15,6 +15,7 @@ export default function HomeScreen() {
     }, [])
 
     const switchRecipe = (direction) => {
+        console.log(data[recipe].ingredients.split(", "))
         if(direction === 'left') {
             if (recipe === 0) {
                 setRecipe(data.length-1)
@@ -37,7 +38,14 @@ export default function HomeScreen() {
                 <div className={styles.innerCircle}>
                     <div className={styles.content}>
                         <h1>Title: {data[recipe].title}</h1>
-                        <p>Ingredient: {data[recipe].ingredients}</p>
+                        <p>Ingredient:</p>
+                        <ul>
+                            {data[recipe].ingredients.split(", ").map((item, index) => {
+                                return <li key={index}>
+                                    {item}
+                                </li>
+                            })}
+                        </ul>
                     </div>
                 </div>
             </div>
