@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter  } from "next/router";
 import Nav from "./Nav"
 import axios from 'axios';
 import styles from '../../styles/CreateRecipe.module.css'
@@ -6,7 +7,7 @@ import styles from '../../styles/CreateRecipe.module.css'
 export default function CreateRecipe() {
     const [ingredients, setIngredients] = useState(["ingredient"])
     const [steps, setSteps] = useState(["step"])
-    
+    const router = useRouter();
     const handleSubmit = (e) => {
         e.preventDefault()
         // Save all the steps and ingredients into arrays
@@ -28,10 +29,13 @@ export default function CreateRecipe() {
             i++
         }
         const obj = {name: e.target.name.value, ingredients: ingredientArr, steps: stepArr}
-        console.log(obj)
-        axios.post("http://localhost:8000/api/recipe", obj)
-        .then(resp => console.log(resp))
-        .catch(err => console.log(err))
+        router.push("/")
+        // axios.post("http://localhost:8000/api/recipe", obj)
+        // .then(resp => {
+        //     console.log(resp)
+        //     router.push("/")
+        // })
+        // .catch(err => console.log(err))
     }
 
     // Create addictional input field for ingredient and step.
