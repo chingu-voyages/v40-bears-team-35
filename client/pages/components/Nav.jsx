@@ -7,7 +7,10 @@ export default function Nav() {
 				<h1>Cinder 🔥</h1>
 			</a>
 			<div>
-				<a href='/components/loginRegister/LoginRegister'>
+				<a className={styles.link} href='/components/CreateRecipe'>
+					<b>Create a Recipe</b>
+				</a>
+				<a className={styles.link} href='/components/loginRegister/LoginRegister'>
 					<b>Login/SignUp</b>
 				</a>
 			</div>
