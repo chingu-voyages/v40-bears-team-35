@@ -4,3 +4,8 @@
 	justify-content: space-around;
 	align-items: center;
 }
+
+.link {
+	margin-left: 10px;
+	cursor: pointer;
+}

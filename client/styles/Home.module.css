@@ -29,7 +29,7 @@
 }
 .content {
 	opacity: 0;
-	font-size: 4em;
+	/* font-size: 4em;  */
 	animation-name: showContent;
 	animation-duration: 2s;
 	animation-delay: 1.5s;

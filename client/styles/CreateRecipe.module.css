@@ -1,0 +1,50 @@
+/* Container for the form */
+.box {
+    outline: #E93737 solid 16.3px;
+    border: 16.3px solid #E95353;
+    background-color: #FF8282;
+    width: 35%;
+    height: 80vh;
+    min-height: 600px;
+    margin: auto;
+    border-radius: 40px;
+    padding: 10px;
+    margin-top: 30px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.box::-webkit-scrollbar {
+    scrollbar-width: none;
+}
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.btn {
+    background-color: #E95353;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+}
+.submitBtn {
+    width: 50%;
+    margin-top: 10px;
+    background-color: #E93737;
+}
+
+@media only screen and (max-width:1280px) {
+    .box {
+        width: 80%;
+    }
+}
