@@ -23,21 +23,24 @@
 
 .input {
     padding: 8px;
+    margin-bottom: 10px;
     background-color: white;
     color: black;
     border: none;
-    margin-bottom: 10px;
 }
 
 .btn {
-    background-color: #E93737;
+    background-color: #E95353;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     margin-bottom: 10px;
+    color: white;
 }
 .submitBtn {
     width: 50%;
+    margin-top: 10px;
+    background-color: #E93737;
 }
 
 @media only screen and (max-width:1280px) {

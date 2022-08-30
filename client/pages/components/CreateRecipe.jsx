@@ -8,6 +8,7 @@ export default function CreateRecipe() {
     const [ingredients, setIngredients] = useState(["ingredient"])
     const [steps, setSteps] = useState(["step"])
     const router = useRouter();
+
     const handleSubmit = (e) => {
         e.preventDefault()
         // Save all the steps and ingredients into arrays
@@ -28,14 +29,13 @@ export default function CreateRecipe() {
             }
             i++
         }
-        const obj = {name: e.target.name.value, ingredients: ingredientArr, steps: stepArr}
-        router.push("/")
-        // axios.post("http://localhost:8000/api/recipe", obj)
-        // .then(resp => {
-        //     console.log(resp)
-        //     router.push("/")
-        // })
-        // .catch(err => console.log(err))
+        const obj = {name: e.target.name.value, ingredients: ingredientArr, steps: stepArr, typeOfRecipe: e.target.typeOfRecipe}
+        axios.post("http://localhost:8000/api/recipe", obj)
+        .then(resp => {
+            console.log(resp)
+            router.push("/")
+        })
+        .catch(err => console.log(err))
     }
 
     // Create addictional input field for ingredient and step.
@@ -47,6 +47,7 @@ export default function CreateRecipe() {
         const temp = [...steps, "step"]
         setSteps(temp)
     }
+
     return(
         <>
             <Nav/>
@@ -58,6 +59,10 @@ export default function CreateRecipe() {
                         <div className={styles.formGroup}>
                             <label>Name</label>
                             <input type="text" placeholder="Enter a name" className={styles.input} name="name"/>
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label>Type of Recipe</label>
+                            <input type="text" placeholder="Vegan, Quick Meal, Brunch, etc..." className={styles.input} name="typeOfRecipe"/>
                         </div>
                         {/* Ingredients */}
                         <div className={styles.formGroup}>
