@@ -17,13 +17,12 @@ const UserSchema = new mongoose.Schema({
 }, {timestamps: true})
 
 UserSchema.pre('save', function(next) {
-    bcrypt.hash(this.password, 10) {
+    bcrypt.hash(this.password, 10)
         .then(hash => {
             this.password = hash
             next()
         })
-    }
 })
 
-const User = mongoose.model("Users", UserSchema)
+const User = mongoose.model("users", UserSchema)
 module.exports = User

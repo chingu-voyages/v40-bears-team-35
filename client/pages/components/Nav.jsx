@@ -9,10 +9,10 @@ export default function Nav() {
 			</Link>
 			<div>
 				<Link href='/components/CreateRecipe'>
-					<b className={styles.link}>Create a Recipe</b>
+					<b className={`${styles.link} ${styles.linkBtn}`}>Create a Recipe</b>
 				</Link>
-				<Link className={styles.link} href='/components/loginRegister/LoginRegister'>
-					<b className={styles.link}>Login/SignUp</b>
+				<Link  href='/components/loginRegister/LoginRegister'>
+					<b className={`${styles.link} ${styles.linkBtn}`}>Login/SignUp</b>
 				</Link>
 			</div>
 		</nav>
