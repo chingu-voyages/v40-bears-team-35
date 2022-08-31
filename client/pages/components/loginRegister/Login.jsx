@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useUserContext } from '../../context/UserWrapper';
+import { useRouter } from 'next/router';
 import axios from 'axios'
 import styles from '../../../styles/LoginRegister.module.css';
 
@@ -7,6 +8,7 @@ export default function Login({setShow}) {
     const [form, setForm] = useState({username: "", password: ""})
     const [errForm, setErrForm] = useState(false)
     const {setUser} = useUserContext()
+    const router = useRouter()
 
     const submitForm = (e) => {
         e.preventDefault()
@@ -15,6 +17,7 @@ export default function Login({setShow}) {
         .then(resp => {
             setUser(resp.data)
             console.log(resp)
+            router.push('/')
         })
         .catch(err => {
             setErrForm(true)

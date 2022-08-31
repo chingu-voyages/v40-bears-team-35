@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../styles/Home.module.css';
+import { useUserContext } from '../context/UserWrapper';
 
 //temporary  dataset
 const data = [
@@ -9,13 +10,15 @@ const data = [
 ]
 export default function HomeScreen() {
     const [recipe, setRecipe] = useState(0)
+    const {user} = useUserContext()
+
     useEffect(() =>  {
         //initial recipe. should be the one from a data base
         setRecipe(0)
+        console.log(user)
     }, [])
 
     const switchRecipe = (direction) => {
-        console.log(data[recipe].ingredients.split(", "))
         if(direction === 'left') {
             if (recipe === 0) {
                 setRecipe(data.length-1)
