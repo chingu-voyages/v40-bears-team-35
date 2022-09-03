@@ -16,12 +16,10 @@ export default function Register({setShow}) {
         axios.post("http://localhost:8000/api/user/register", form)
         .then(resp => {
             setUser({_id: resp.data._id, username: resp.data.username})
-            console.log(resp)
             router.push('/')
         })
         .catch(err => {
             setErrForm({...errForm, ...err.response.data})
-            console.log(err.response)
         })
     }
 

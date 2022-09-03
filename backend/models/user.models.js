@@ -13,7 +13,13 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: [true, 'Email is required']
-    }
+    },
+    recipes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "recipes" 
+        }
+    ]
 }, {timestamps: true})
 
 UserSchema.pre('save', function(next) {

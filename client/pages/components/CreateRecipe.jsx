@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRouter  } from "next/router";
+import { useUserContext } from "../context/UserWrapper";
 import Nav from "./Nav"
 import axios from 'axios';
 import styles from '../../styles/CreateRecipe.module.css'
@@ -7,6 +8,7 @@ import styles from '../../styles/CreateRecipe.module.css'
 export default function CreateRecipe() {
     const [ingredients, setIngredients] = useState(["ingredient"])
     const [steps, setSteps] = useState(["step"])
+    const {user} = useUserContext()
     const router = useRouter();
 
     const handleSubmit = (e) => {
@@ -29,10 +31,10 @@ export default function CreateRecipe() {
             }
             i++
         }
-        const obj = {name: e.target.name.value, ingredients: ingredientArr, steps: stepArr, typeOfRecipe: e.target.typeOfRecipe}
-        axios.post("http://localhost:8000/api/recipe", obj)
+        const obj = {name: e.target.name.value, ingredients: ingredientArr, steps: stepArr, typeOfRecipe: e.target.typeOfRecipe.value, userId: user._id}
+        console.log(user._id)
+        axios.post(`http://localhost:8000/api/recipe/`, obj)
         .then(resp => {
-            console.log(resp)
             router.push("/")
         })
         .catch(err => console.log(err))

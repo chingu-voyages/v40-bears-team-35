@@ -12,16 +12,13 @@ export default function Login({setShow}) {
 
     const submitForm = (e) => {
         e.preventDefault()
-        console.log(form)
         axios.post("http://localhost:8000/api/user/login", form)
         .then(resp => {
             setUser(resp.data)
-            console.log(resp)
             router.push('/')
         })
         .catch(err => {
             setErrForm(true)
-            console.log(err.response)
         })
     }
     return(

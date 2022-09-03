@@ -15,7 +15,7 @@ export default function HomeScreen() {
     useEffect(() =>  {
         //initial recipe. should be the one from a data base
         setRecipe(0)
-        console.log(user)
+        // console.log(user)
     }, [])
 
     const switchRecipe = (direction) => {
