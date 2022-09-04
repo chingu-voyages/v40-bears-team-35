@@ -3,7 +3,6 @@ const User = require('../models/user.models')
 
 module.exports.createRecipe = (req, res) => {
     const {name, ingredients, steps, typeOfRecipe, userId} = req.body
-    console.log(typeof userId)
     Recipe.create({
         name,
         ingredients,
@@ -17,8 +16,8 @@ module.exports.createRecipe = (req, res) => {
                 recipes: resp._id
             }},
             {new: true, useFindAndModify: false})
-            .then(() => console.log({message: "New recipe created"}))
-            .catch(err => console.log(err))
+            .then(() => res.json({message: "New recipe created"}))
+            .catch(err => res.json(err))
     })
     .catch(err => res.json(err))
 }
