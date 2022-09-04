@@ -7,6 +7,9 @@ MongoDB using mongoose library with a express server.
 - express - backend web application framework
 - [cors](https://expressjs.com/en/resources/middleware/cors.html) - node.js package for providing a Connect/Express middleware to enable CORS
 - [bcrypt](https://www.npmjs.com/package/bcrypt) - hashing password
+- cookie-parser
+- jsonwebtoken - require a `SECRET_KEY` from .env file
+- dotenv - SECRET_KEY
 
 ### <h3 style="color:lightblue">Running The Server (nodemon)</h3>
 [nodemon](https://nodemon.io/) - rerun the server whenever changes are make.

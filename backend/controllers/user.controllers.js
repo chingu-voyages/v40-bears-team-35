@@ -1,5 +1,7 @@
 const User = require('../models/user.models')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 module.exports.register = async(req, res) => {
     const { username, password, confirm, email } = req.body
@@ -19,7 +21,17 @@ module.exports.register = async(req, res) => {
             password,
             email
         })
-        .then(resp => res.json(resp))
+        .then(resp => {
+            const payload = {
+                _id : resp._id,
+                username: resp.username
+            }
+            const userToken = jwt.sign(payload, process.env.SECRET_KEY)
+            res.cookie('userToken', userToken, process.env.SECRET_KEY, {
+                httpOnly: true
+            })
+            .json(resp)
+        })
         .catch(err => res.json(err))
     }
 }
@@ -29,8 +41,28 @@ module.exports.login = async(req, res) => {
     const user = await User.findOne({username: username})
     const validPassword = await bcrypt.compare(password, user.password)
     if(validPassword) {
-        res.json({_id: user._id, username: user.username})
+        const payload  = {
+            _id: user._id,
+            username: user.username
+        }
+        const userToken = jwt.sign(payload, process.env.SECRET_KEY)
+        res.cookie('userToken', userToken, process.env.SECRET_KEY, {
+            httpOnly: true
+        })
+        .json({_id: user._id, username: user.username})
     } else {
         res.status(404).json({message: 'Invalid Username/Password'})
     }
+}
+
+module.exports.logout = (req, res) => {
+    res.clearCookie('userToken')
+    res.sendStatus(200)
+}
+
+module.exports.relogin = (req, res) => {
+    const { _id } = res.locals.payload
+    User.findOne({_id: _id})
+    .then(resp => res.json({_id: resp._id, username: resp.username}))
+    .catch(err => res.json(err))
 }

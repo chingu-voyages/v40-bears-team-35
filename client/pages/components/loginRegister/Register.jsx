@@ -34,16 +34,16 @@ export default function Register({setShow}) {
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Email</label>
-                    <input type="text" className={styles.formInput} placeholder="Email" onChange={(e) => setForm({...form, email: e.target.value})} required/>
+                    <input type="email" className={styles.formInput} placeholder="Email" onChange={(e) => setForm({...form, email: e.target.value})} required/>
                     {errForm.email !== "" && <p className={styles.error}>{errForm.email}</p>}
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Password</label>
-                    <input type="text" className={styles.formInput} placeholder="Password" onChange={(e) => setForm({...form, password: e.target.value})} required/>
+                    <input type="password" className={styles.formInput} placeholder="Password" onChange={(e) => setForm({...form, password: e.target.value})} required/>
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Confirm Password</label>
-                    <input type="text" className={styles.formInput} placeholder="Confirm Password" onChange={(e) => setForm({...form, confirm: e.target.value})} required/>
+                    <input type="password" className={styles.formInput} placeholder="Confirm Password" onChange={(e) => setForm({...form, confirm: e.target.value})} required/>
                     {errForm.confirm !== "" && <p className={styles.error}>{errForm.confirm}</p>}
                 </div>
                 <div className={styles.formGroup}>

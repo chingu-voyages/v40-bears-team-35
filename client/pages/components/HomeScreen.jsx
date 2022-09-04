@@ -3,12 +3,6 @@ import { useUserContext } from '../context/UserWrapper';
 import styles from '../../styles/Home.module.css';
 import axios from 'axios';
 
-//temporary  dataset
-// const data = [
-//     {title: "Recipe 1", ingredients: "Eggs, Cheese"}, 
-//     {title: "Recipe 2", ingredients: "Meat, Apple"},
-//     {title: "Recipe 3", ingredients: "Eggs, Meat"}
-// ]
 export default function HomeScreen() {
     const [recipe, setRecipe] = useState(0)
     const [data, setData] = useState([])
@@ -48,17 +42,19 @@ export default function HomeScreen() {
             <div className={`${styles.arrow} ${styles.left} ${styles.singleArrow}`} onClick={() => switchRecipe('left')}></div>
             <div className={styles.outerCircle}>
                 <div className={styles.innerCircle}>
-                    <div className={styles.content}>
-                        <h1>Title: {data.length > 0 && data[recipe].name}</h1>
-                        <p>Ingredient:</p>
-                        <ul>
-                            {data.length > 0 && data[recipe].ingredients.map((item, index) => {
-                                return <li key={index}>
-                                    {item}
-                                </li>
-                            })}
-                        </ul>
-                    </div>
+                    {data.length > 0 &&
+                        <div className={styles.content}>
+                            <h1>Title: {data[recipe].name}</h1>
+                            <p>Ingredient:</p>
+                            <ul>
+                                {data[recipe].ingredients.map((item, index) => {
+                                    return <li key={index}>
+                                        {item}
+                                    </li>
+                                })}
+                            </ul>
+                        </div>
+                    }
                 </div>
             </div>
             <div className={`${styles.arrow} ${styles.right} ${styles.singleArrow}`} onClick={() => switchRecipe('right')}></div>

@@ -32,7 +32,7 @@ export default function Login({setShow}) {
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.formLabel}>Password</label>
-                    <input type="text" className={styles.formInput} placeholder="Password" onChange={(e) => setForm({...form, password: e.target.value})} required/>
+                    <input type="password" className={styles.formInput} placeholder="Password" onChange={(e) => setForm({...form, password: e.target.value})} required/>
                     {errForm && <p className={styles.error}>Invalid Username/Password</p>}
                 </div>
                 <div className={styles.formGroup}>
