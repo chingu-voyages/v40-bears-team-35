@@ -14,7 +14,7 @@ export default function HomeScreen() {
         axios.get("http://localhost:8000/api/recipes")
         .then(resp => {
             setData(resp.data)
-            console.log(resp)})
+        })
         .catch(err => console.log(err))
         // console.log(user)
     }, [])

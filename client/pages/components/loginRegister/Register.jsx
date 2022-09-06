@@ -13,7 +13,7 @@ export default function Register({setShow}) {
 
     const submitForm = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:8000/api/user/register", form)
+        axios.post("http://localhost:8000/api/user/register", form, {"withCredentials": true})
         .then(resp => {
             setUser({_id: resp.data._id, username: resp.data.username})
             router.push('/')

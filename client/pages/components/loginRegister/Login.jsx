@@ -12,7 +12,7 @@ export default function Login({setShow}) {
 
     const submitForm = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:8000/api/user/login", form)
+        axios.post("http://localhost:8000/api/user/login", form, {"withCredentials": true})
         .then(resp => {
             setUser(resp.data)
             router.push('/')
