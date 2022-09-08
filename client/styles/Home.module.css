@@ -1,6 +1,7 @@
 .container {
-	height: 90vh;
+	height: 90%;
 	width: 100vw;
+	padding-top: 40px;
 }
 .container,
 .outerCircle,
@@ -94,6 +95,7 @@
 		height: 70vh;
 		flex-direction: column;
 		justify-content: space-evenly;
+		padding-top: 0;
 	}
 	.singleArrow {
 		display: none;
@@ -108,5 +110,6 @@
 		--outerSize: 450px;
 		--innerSize: 400px;
 		height: 80vh;
+		padding-top: 10px;
 	}
 }

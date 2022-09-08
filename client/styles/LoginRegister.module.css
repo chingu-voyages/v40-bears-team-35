@@ -49,6 +49,8 @@
     width: 50%;
     align-self: center;
     font-size: larger;
+    color: white;
+    cursor: pointer;
 }
 
 /* link */
@@ -56,6 +58,10 @@
     color: blue;
     cursor: pointer;
     font-weight: bold;
+}
+
+.error {
+    color: red;
 }
 
 /* Media Queries */
